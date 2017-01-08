@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: cinejs-services
+  data:
+    mongodb:
+      uri: ${mongo.uri}
+  hateoas:
+    use-hal-as-default-json-media-type: false
+
+server:
+  contextPath: /cinejs-services
+  port: 8080
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://192.168.0.10:8761/eureka/
+  instance:
+    leaseRenewalIntervalInSeconds: 10
+    metadataMap:
+      instanceId: ${spring.application.name}:${spring.application.instance_id:${server.port}:${random.value}}
