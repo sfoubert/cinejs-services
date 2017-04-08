@@ -1,6 +1,7 @@
 package fr.sebfou.cinejs;
 
 import fr.sebfou.cinejs.model.User;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,6 +23,7 @@ public class UserControllerIntegrationTest {
     private TestRestTemplate restTemplate;
 
     @Test
+    @Ignore
     public void health() {
         ResponseEntity<User> entity =
                 restTemplate.getForEntity("/user", User.class);
